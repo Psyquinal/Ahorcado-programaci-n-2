@@ -1,0 +1,37 @@
+
+def adivina_el_numero():
+    numero_secreto = random.randint(1, 20)
+    intentos = 0
+
+#*******************************************************************************
+
+    print("Bienvenido al juego de adivinar el número")
+    print("Tenes 6 intentos para adivinar el número entre 1 y 20.")
+
+#*******************************************************************************
+    while intentos < 3:
+        try:
+            intento = int(input("Intento {}/6: Ingresa tu número: ".format(intentos + 1)))
+        except ValueError:
+            print("por favor, no te hagas el gracioso y no pongas numeros mayores, con , o etc.")
+            continue
+
+        if intento < 1 or intento > 20:
+            print("El número debe estar entre 1 y 20.")
+            continue
+
+        if intento < numero_secreto:
+            print("El número es mayor. intentanuevamente.")
+        elif intento > numero_secreto:
+            print("El número es menor. intentanuevamen.")
+        else:
+            print("re bien, adivinaste el numero".format(numero_secreto, intentos + 1))
+            break
+
+        intentos += 1
+
+    if intentos == 3:
+        print("mala ahi, te quedaste sin intentos.".format(numero_secreto))
+
+if __name__ == "__main__":
+    adivina_el_numero()
