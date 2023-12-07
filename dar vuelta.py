@@ -1,0 +1,16 @@
+matriz = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+    [13, 14, 15, 16]
+]
+
+matrizV = [fila[::-1] for fila in matriz]
+
+print("Matriz: ")
+for fila in matriz:
+    print(fila)
+
+print("matriz dada vuelta: ")
+for fila in matrizV:
+    print(fila)
